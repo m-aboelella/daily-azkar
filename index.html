@@ -8,45 +8,60 @@
   <title>أذكار الصباح والمساء</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="interaction.css" />
+  <link rel="stylesheet" href="locale.css" />
 </head>
 <body>
   <div class="page-shell">
     <header class="hero" id="top">
       <div class="hero-pattern" aria-hidden="true"></div>
+
+      <div class="language-controls" aria-label="Language controls">
+        <button class="language-toggle" id="language-toggle" type="button">
+          <span aria-hidden="true">🌐</span>
+          <span id="language-toggle-label">English</span>
+        </button>
+        <button class="transliteration-toggle" id="transliteration-toggle" type="button" hidden>
+          Hide transliteration
+        </button>
+      </div>
+
       <div class="hero-content">
-        <p class="eyebrow">وَاذْكُر رَّبَّكَ كَثِيرًا</p>
-        <h1>أذكار الصباح والمساء</h1>
-        <p class="intro">
+        <p class="eyebrow" data-i18n="eyebrow">وَاذْكُر رَّبَّكَ كَثِيرًا</p>
+        <h1 data-i18n="title">أذكار الصباح والمساء</h1>
+        <p class="intro" data-i18n="intro">
           صفحة هادئة للقراءة، مع عدّاد للأذكار التي تُكرَّر. اضغط زر العدّ بعد كل مرة حتى يصل العدد إلى صفر.
           الأعداد تعود كما كانت عند تحديث الصفحة.
         </p>
       </div>
     </header>
 
-    <nav class="quick-nav" aria-label="التنقل بين أقسام الصفحة">
+    <nav class="quick-nav" aria-label="التنقل بين أقسام الصفحة" data-i18n-aria="navigationLabel">
       <a class="nav-link morning-link" href="#morning">
         <span class="nav-icon" aria-hidden="true">☀</span>
-        أذكار الصباح
+        <span data-i18n="morningNav">أذكار الصباح</span>
       </a>
       <a class="nav-link evening-link" href="#evening">
         <span class="nav-icon" aria-hidden="true">☾</span>
-        أذكار المساء
+        <span data-i18n="eveningNav">أذكار المساء</span>
       </a>
       <button class="reset-button" id="reset-counters" type="button">
         <span aria-hidden="true">↻</span>
-        إعادة ضبط العدادات
+        <span data-i18n="reset">إعادة ضبط العدادات</span>
       </button>
     </nav>
 
-    <aside class="counter-guide" aria-label="طريقة استخدام العدّاد">
+    <aside class="counter-guide" aria-label="طريقة استخدام العدّاد" data-i18n-aria="guideLabel">
       <span class="guide-icon" aria-hidden="true">☝</span>
       <div>
-        <strong>بعد كل مرة تقرأ فيها الذكر</strong>
-        <p>اضغط زر العدّاد لينقص الرقم تلقائيًا حتى يظهر لك «تم».</p>
+        <strong data-i18n="guideTitle">بعد كل مرة تقرأ فيها الذكر</strong>
+        <p data-i18n="guideBody">اضغط زر العدّاد لينقص الرقم تلقائيًا حتى يظهر لك «تم».</p>
+        <p class="english-reading-note" id="english-reading-note" hidden>
+          Keep the Arabic as the recitation. Transliteration helps with pronunciation; the English text explains the meaning.
+        </p>
       </div>
       <span class="guide-example" aria-hidden="true">
-        <b>٣</b>
-        <small>اضغط هنا</small>
+        <b id="guide-number">٣</b>
+        <small data-i18n="guideExample">اضغط هنا</small>
       </span>
     </aside>
 
@@ -55,8 +70,8 @@
         <div class="section-heading">
           <div class="section-icon" aria-hidden="true">☀</div>
           <div>
-            <h2 id="morning-title">أذكار الصباح</h2>
-            <p>ابدأ يومك بالذكر والطمأنينة</p>
+            <h2 id="morning-title" data-i18n="morningTitle">أذكار الصباح</h2>
+            <p data-i18n="morningSubtitle">ابدأ يومك بالذكر والطمأنينة</p>
           </div>
         </div>
         <div class="azkar-list" data-section="morning"></div>
@@ -68,8 +83,8 @@
         <div class="section-heading">
           <div class="section-icon" aria-hidden="true">☾</div>
           <div>
-            <h2 id="evening-title">أذكار المساء</h2>
-            <p>اختم يومك بسكينة وذكر</p>
+            <h2 id="evening-title" data-i18n="eveningTitle">أذكار المساء</h2>
+            <p data-i18n="eveningSubtitle">اختم يومك بسكينة وذكر</p>
           </div>
         </div>
         <div class="azkar-list" data-section="evening"></div>
@@ -77,13 +92,14 @@
     </main>
 
     <footer>
-      <p>العدادات تعمل داخل الصفحة فقط ولا تُحفظ بعد تحديث الصفحة.</p>
-      <a href="#top">العودة إلى الأعلى ↑</a>
+      <p data-i18n="footerNote">العدادات تعمل داخل الصفحة فقط ولا تُحفظ بعد تحديث الصفحة.</p>
+      <a href="#top" data-i18n="backToTop">العودة إلى الأعلى ↑</a>
     </footer>
   </div>
 
-  <div class="toast" id="toast" role="status" aria-live="polite">تمت إعادة ضبط العدادات</div>
+  <div class="toast" id="toast" role="status" aria-live="polite" data-i18n="resetToast">تمت إعادة ضبط العدادات</div>
   <script src="script.js"></script>
   <script src="interaction.js"></script>
+  <script src="locale.js"></script>
 </body>
 </html>
