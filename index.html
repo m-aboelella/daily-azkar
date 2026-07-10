@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#173f36" />
+  <meta name="description" content="أذكار الصباح والمساء مع عدّادات بسيطة للتكرار." />
+  <title>أذكار الصباح والمساء</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero" id="top">
+      <div class="hero-pattern" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="eyebrow">وَاذْكُر رَّبَّكَ كَثِيرًا</p>
+        <h1>أذكار الصباح والمساء</h1>
+        <p class="intro">
+          صفحة هادئة للقراءة، مع عدّاد للأذكار التي تُكرَّر. اضغط زر العدّ بعد كل مرة حتى يصل العدد إلى صفر.
+          الأعداد تعود كما كانت عند تحديث الصفحة.
+        </p>
+      </div>
+    </header>
+
+    <nav class="quick-nav" aria-label="التنقل بين أقسام الصفحة">
+      <a class="nav-link morning-link" href="#morning">
+        <span class="nav-icon" aria-hidden="true">☀</span>
+        أذكار الصباح
+      </a>
+      <a class="nav-link evening-link" href="#evening">
+        <span class="nav-icon" aria-hidden="true">☾</span>
+        أذكار المساء
+      </a>
+      <button class="reset-button" id="reset-counters" type="button">
+        <span aria-hidden="true">↻</span>
+        إعادة ضبط العدادات
+      </button>
+    </nav>
+
+    <main>
+      <section class="azkar-section morning-section" id="morning" aria-labelledby="morning-title">
+        <div class="section-heading">
+          <div class="section-icon" aria-hidden="true">☀</div>
+          <div>
+            <h2 id="morning-title">أذكار الصباح</h2>
+            <p>ابدأ يومك بالذكر والطمأنينة</p>
+          </div>
+        </div>
+        <div class="azkar-list" data-section="morning"></div>
+      </section>
+
+      <div class="ornament" aria-hidden="true"><span></span><b>✦</b><span></span></div>
+
+      <section class="azkar-section evening-section" id="evening" aria-labelledby="evening-title">
+        <div class="section-heading">
+          <div class="section-icon" aria-hidden="true">☾</div>
+          <div>
+            <h2 id="evening-title">أذكار المساء</h2>
+            <p>اختم يومك بسكينة وذكر</p>
+          </div>
+        </div>
+        <div class="azkar-list" data-section="evening"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>العدادات تعمل داخل الصفحة فقط ولا تُحفظ بعد تحديث الصفحة.</p>
+      <a href="#top">العودة إلى الأعلى ↑</a>
+    </footer>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">تمت إعادة ضبط العدادات</div>
+  <script src="script.js"></script>
+</body>
+</html>
